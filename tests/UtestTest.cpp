@@ -155,6 +155,26 @@ TEST(UtestShell, DestructorIsCalledForLocalObjectsWhenTheTestFails)
 	CHECK(destructorWasCalledOnFailedTest);
 }
 
+/*
+ * "terminate called after throwing an instance of 'CppUTestFailedException'" sometimes
+ *   1. gcc (GCC) 3.4.5 20051201 (Red Hat 3.4.5-2) --> terminated
+ *   2. clang version 3.2 (tags/RELEASE_32/final) on Red Hat 5.5 --> succeed
+ *   3. clang version 3.2 (tags/RELEASE_32/final) on Ubuntu 12.04 --> terminated
+ *   4. gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3  --> succeed
+ */
+
+extern "C"{
+void SetDummyWithinC(int* p);
+void GetDummyWithinC();
+}
+
+TEST(UtestShell, CatchExceptionInteractWithC)
+{
+	fixture.setTestFunction(GetDummyWithinC);
+	fixture.runAllTests();
+	fixture.assertPrintContains("Uninitialized");
+}
+
 #endif
 
 TEST_BASE(MyOwnTest)
