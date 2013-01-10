@@ -93,6 +93,7 @@ public:
     virtual void assertPointersEqual(const void *expected, const void *actual, const char *fileName, int lineNumber);
     virtual void assertDoublesEqual(double expected, double actual, double threshold, const char *fileName, int lineNumber);
     virtual void fail(const char *text, const char *fileName, int lineNumber);
+    virtual void fail_C(const char *text, const char *fileName, int lineNumber);
 
     virtual void print(const char *text, const char *fileName, int lineNumber);
     virtual void print(const SimpleString & text, const char *fileName, int lineNumber);
@@ -103,6 +104,7 @@ public:
     void setTestName(const char *testName);
 
     virtual void exitCurrentTest();
+    virtual void exitCurrentTest_C();
     virtual void exitCurrentTestWithoutException();
 
     static void crash();

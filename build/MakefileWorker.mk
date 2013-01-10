@@ -189,8 +189,7 @@ endif
 # Default warnings
 ifndef CPPUTEST_WARNINGFLAGS
 ifeq ($(CPPUTEST_USE_REAL_GTEST), N)
-	#CPPUTEST_WARNINGFLAGS =  -Wall -Wextra -Werror -Wshadow -Wswitch-default -Wswitch-enum -Wconversion
-	CPPUTEST_WARNINGFLAGS =  -Wall -Wextra -Wshadow -Wswitch-default -Wswitch-enum -Wconversion
+	CPPUTEST_WARNINGFLAGS =  -Wall -Wextra -Werror -Wshadow -Wswitch-default -Wswitch-enum -Wconversion
 ifeq ($(CPPUTEST_PEDANTIC_ERRORS), Y)
 	CPPUTEST_WARNINGFLAGS += -pedantic-errors
 endif 
@@ -208,8 +207,8 @@ ifeq ($(COMPILER_NAME),$(CLANG_STR))
 # -Wno-padded -> I sort-of like this warning but if there is a bool at the end of the class, it seems impossible to remove it! (except by making padding explicit)
 # -Wno-global-constructors Wno-exit-time-destructors -> Great warnings, but in CppUTest it is impossible to avoid as the automatic test registration depends on the global ctor and dtor
 # -Wno-weak-vtables -> The TEST_GROUP macro declares a class and will automatically inline its methods. Thats ok as they are only in one translation unit. Unfortunately, the warning can't detect that, so it must be disabled. 
-	CPPUTEST_CXX_WARNINGFLAGS += -Weverything -Wno-disabled-macro-expansion -Wno-padded -Wno-global-constructors -Wno-exit-time-destructors -Wno-weak-vtables
-	CPPUTEST_C_WARNINGFLAGS += -Weverything -Wno-padded
+	CPPUTEST_CXX_WARNINGFLAGS += -Wno-disabled-macro-expansion -Wno-padded -Wno-global-constructors -Wno-exit-time-destructors -Wno-weak-vtables
+	CPPUTEST_C_WARNINGFLAGS += -Wno-padded
 endif
 
 # Uhm. Maybe put some warning flags for SunStudio here?

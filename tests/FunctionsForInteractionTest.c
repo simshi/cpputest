@@ -7,9 +7,9 @@ void SetDummyWithinC(int* p)
 	dummy_ptr = p;
 }
 
-int GetDummyWithinC(void)
+void GetDummyWithinC(void)
 {
 	if (!dummy_ptr) FAIL_TEXT_C("Uninitialized!");
 
-	return *dummy_ptr;
+	/*return *dummy_ptr;*/
 }

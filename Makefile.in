@@ -209,6 +209,7 @@ am_CppUTestTests_OBJECTS = CppUTestTests-AllTests.$(OBJEXT) \
 	CppUTestTests-PreprocessorTest.$(OBJEXT) \
 	CppUTestTests-TestUTestMacro.$(OBJEXT) \
 	CppUTestTests-AllocationInCppFile.$(OBJEXT) \
+	CppUTestTests-FunctionsForInteractionTest.$(OBJEXT) \
 	CppUTestTests-UtestTest.$(OBJEXT)
 CppUTestTests_OBJECTS = $(am_CppUTestTests_OBJECTS)
 CppUTestTests_DEPENDENCIES = libCppUTest.a $(am__DEPENDENCIES_1)
@@ -566,6 +567,7 @@ CppUTestTests_SOURCES = \
 	tests/PreprocessorTest.cpp \
 	tests/TestUTestMacro.cpp \
 	tests/AllocationInCppFile.cpp \
+	tests/FunctionsForInteractionTest.c \
 	tests/UtestTest.cpp
 
 CppUTestExtTests_CPPFLAGS = $(libCppUTestExt_a_CPPFLAGS)
@@ -753,6 +755,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/CppUTestTests-TestRegistryTest.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/CppUTestTests-TestResultTest.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/CppUTestTests-TestUTestMacro.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/CppUTestTests-FunctionsForInteractionTest.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/CppUTestTests-UtestTest.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libCppUTestExt_a-CodeMemoryReportFormatter.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libCppUTestExt_a-GTestConvertor.Po@am__quote@
@@ -862,6 +865,20 @@ CppUTestTests-AllocationInCFile.obj: tests/AllocationInCFile.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='tests/AllocationInCFile.c' object='CppUTestTests-AllocationInCFile.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(CppUTestTests_CPPFLAGS) $(CPPFLAGS) $(CppUTestTests_CFLAGS) $(CFLAGS) -c -o CppUTestTests-AllocationInCFile.obj `if test -f 'tests/AllocationInCFile.c'; then $(CYGPATH_W) 'tests/AllocationInCFile.c'; else $(CYGPATH_W) '$(srcdir)/tests/AllocationInCFile.c'; fi`
+
+CppUTestTests-FunctionsForInteractionTest.o: tests/FunctionsForInteractionTest.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(CppUTestTests_CPPFLAGS) $(CPPFLAGS) $(CppUTestTests_CFLAGS) $(CFLAGS) -MT CppUTestTests-FunctionsForInteractionTest.o -MD -MP -MF $(DEPDIR)/CppUTestTests-FunctionsForInteractionTest.Tpo -c -o CppUTestTests-FunctionsForInteractionTest.o `test -f 'tests/FunctionsForInteractionTest.c' || echo '$(srcdir)/'`tests/FunctionsForInteractionTest.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/CppUTestTests-FunctionsForInteractionTest.Tpo $(DEPDIR)/CppUTestTests-FunctionsForInteractionTest.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='tests/FunctionsForInteractionTest.c' object='CppUTestTests-FunctionsForInteractionTest.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(CppUTestTests_CPPFLAGS) $(CPPFLAGS) $(CppUTestTests_CFLAGS) $(CFLAGS) -c -o CppUTestTests-FunctionsForInteractionTest.o `test -f 'tests/FunctionsForInteractionTest.c' || echo '$(srcdir)/'`tests/FunctionsForInteractionTest.c
+
+CppUTestTests-FunctionsForInteractionTest.obj: tests/FunctionsForInteractionTest.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(CppUTestTests_CPPFLAGS) $(CPPFLAGS) $(CppUTestTests_CFLAGS) $(CFLAGS) -MT CppUTestTests-FunctionsForInteractionTest.obj -MD -MP -MF $(DEPDIR)/CppUTestTests-FunctionsForInteractionTest.Tpo -c -o CppUTestTests-FunctionsForInteractionTest.obj `if test -f 'tests/FunctionsForInteractionTest.c'; then $(CYGPATH_W) 'tests/FunctionsForInteractionTest.c'; else $(CYGPATH_W) '$(srcdir)/tests/FunctionsForInteractionTest.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/CppUTestTests-FunctionsForInteractionTest.Tpo $(DEPDIR)/CppUTestTests-FunctionsForInteractionTest.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='tests/FunctionsForInteractionTest.c' object='CppUTestTests-FunctionsForInteractionTest.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(CppUTestTests_CPPFLAGS) $(CPPFLAGS) $(CppUTestTests_CFLAGS) $(CFLAGS) -c -o CppUTestTests-FunctionsForInteractionTest.obj `if test -f 'tests/FunctionsForInteractionTest.c'; then $(CYGPATH_W) 'tests/FunctionsForInteractionTest.c'; else $(CYGPATH_W) '$(srcdir)/tests/FunctionsForInteractionTest.c'; fi`
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<

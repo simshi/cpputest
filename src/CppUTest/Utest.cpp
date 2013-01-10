@@ -213,6 +213,11 @@ void UtestShell::exitCurrentTest()
 #endif
 }
 
+void UtestShell::exitCurrentTest_C()
+{
+	PlatformSpecificLongJmp();
+}
+
 void UtestShell::exitCurrentTestWithoutException()
 {
 	PlatformSpecificLongJmp();
@@ -340,6 +345,12 @@ void UtestShell::assertTrueText(bool condition, const char *checkString, const c
 void UtestShell::fail(const char *text, const char* fileName, int lineNumber)
 {
 	failWith(FailFailure(this, fileName, lineNumber, text));
+}
+
+void UtestShell::fail_C(const char *text, const char* fileName, int lineNumber)
+{
+	getTestResult()->addFailure(FailFailure(this, fileName, lineNumber, text));
+	UtestShell::getCurrent()->exitCurrentTest_C();
 }
 
 void UtestShell::assertCstrEqual(const char* expected, const char* actual, const char* fileName, int lineNumber)

@@ -165,7 +165,7 @@ TEST(UtestShell, DestructorIsCalledForLocalObjectsWhenTheTestFails)
 
 extern "C"{
 void SetDummyWithinC(int* p);
-void GetDummyWithinC();
+void GetDummyWithinC(void);
 }
 
 TEST(UtestShell, CatchExceptionInteractWithC)

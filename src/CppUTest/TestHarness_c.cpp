@@ -57,7 +57,7 @@ void CHECK_EQUAL_C_STRING_LOCATION(const char* expected, const char* actual, con
 
 void FAIL_TEXT_C_LOCATION(const char* text, const char* fileName, int lineNumber)
 {
-	FAIL_LOCATION(text, fileName, lineNumber);
+	UtestShell::getCurrent()->fail_C(text,  fileName, lineNumber);
 }
 
 void FAIL_C_LOCATION(const char* fileName, int lineNumber)
